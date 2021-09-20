@@ -1,0 +1,13 @@
+{% extends 'main/basic.html' %}
+{%for f in t %}
+<h1>title = {{f.title}} id = {{f.id}}</h1>
+{% endfor %}
+{% block content %}
+
+    <h1>Новая страница index1</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Добавить">
+    </form>
+{% endblock %}
